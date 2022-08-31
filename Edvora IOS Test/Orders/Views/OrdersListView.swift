@@ -11,10 +11,9 @@ struct OrdersListView: View {
     @State private var orders: [Order] = []
 
     var body: some View {
-        List {
-            ForEach(orders, id: \.orderDate) { order in
-                Text("\(order.orderId)")
-            }
+        NavigationView {
+            orderList
+                .navigationTitle("Orders")
         }
         .onAppear {
             do {
@@ -31,5 +30,18 @@ struct OrdersListView: View {
 struct OrdersListView_Previews: PreviewProvider {
     static var previews: some View {
         OrdersListView()
+    }
+}
+
+extension OrdersListView {
+    var orderList: some View {
+        List {
+            ForEach(orders, id: \.orderDate) { order in
+               OrderListViewCell(order: order)
+            }
+            .listRowBackground(Color.clear)
+            .background(Theme.background)
+        }
+        .listStyle(SidebarListStyle())
     }
 }
