@@ -44,7 +44,7 @@ extension HomeView {
 }
 
 private extension Image {
-    public init(data: Data?) {
+     init(data: Data?) {
         guard let data = data,
           let uiImage = UIImage(data: data) else {
             self = Symbols.profile
