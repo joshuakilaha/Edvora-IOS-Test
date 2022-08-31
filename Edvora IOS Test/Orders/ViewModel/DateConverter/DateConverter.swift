@@ -12,7 +12,7 @@ class DateConverter {
     func dateOrdered(_ date: String) -> String {
         let timeStamp = Date(timeIntervalSince1970: TimeInterval(date)!)
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "d MMM, h:mm a"
+        dateFormatter.dateFormat = "d MMM yyyy, h:mm a"
         return dateFormatter.string(from: timeStamp)
     }
 }
