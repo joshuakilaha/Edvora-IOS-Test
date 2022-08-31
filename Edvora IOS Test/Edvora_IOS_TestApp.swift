@@ -11,7 +11,24 @@ import SwiftUI
 struct Edvora_IOS_TestApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView {
+                ContentView()
+                    .tabItem {
+                        Symbols.home
+                        Text("Home")
+                    }
+                OrdersListView()
+                    .tabItem {
+                        Symbols.orders
+                        Text("Orders")
+                    }
+                ProductsListView()
+                    .tabItem {
+                        Symbols.product
+                        Text("Products")
+                    }
+                
+            }
         }
     }
 }
