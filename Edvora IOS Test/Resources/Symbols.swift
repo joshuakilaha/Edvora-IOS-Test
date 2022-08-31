@@ -12,4 +12,5 @@ enum Symbols {
     static let orders = Image(systemName: "cart")
     static let product = Image(systemName: "shippingbox")
     static let user = Image(systemName: "person")
+    static let profile = Image(systemName: "person.circle.fill")
 }

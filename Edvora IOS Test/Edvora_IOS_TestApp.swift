@@ -12,7 +12,7 @@ struct Edvora_IOS_TestApp: App {
     var body: some Scene {
         WindowGroup {
             TabView {
-                ContentView()
+                HomeView()
                     .tabItem {
                         Symbols.home
                         Text("Home")
