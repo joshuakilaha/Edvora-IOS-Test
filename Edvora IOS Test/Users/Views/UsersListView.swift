@@ -13,7 +13,7 @@ struct UsersListView: View {
     var body: some View {
         NavigationView {
             userList
-            .navigationTitle("Users")
+                .navigationTitle("Users")
         }
         .onAppear {
             do {

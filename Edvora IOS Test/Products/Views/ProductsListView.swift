@@ -11,18 +11,17 @@ struct ProductsListView: View {
     @State private var products: [Product] = []
 
     var body: some View {
-        List {
-            ForEach(products, id: \.productId) { product in
-                Text(product.name)
-            }
-        }
-        .onAppear {
-            do {
-                let productData = try FetchJSONFile.decode(file: FileName.ProductsJSONFile, type: [Product].self)
-                print("Product Data \(productData)")
-                products = productData
-            } catch {
-                print(error)
+        NavigationView {
+            productList
+                .navigationTitle("Products")
+            .onAppear {
+                do {
+                    let productData = try FetchJSONFile.decode(file: FileName.ProductsJSONFile, type: [Product].self)
+                    print("Product Data \(productData)")
+                    products = productData
+                } catch {
+                    print(error)
+                }
             }
         }
     }
@@ -31,5 +30,18 @@ struct ProductsListView: View {
 struct ProductsListView_Previews: PreviewProvider {
     static var previews: some View {
         ProductsListView()
+    }
+}
+extension ProductsListView {
+    // MARK: -List View
+    var productList: some View {
+        List {
+            ForEach(products, id: \.productId) { product in
+                ProductListViewCell(product: product)
+            }
+            .listRowBackground(Color.clear)
+            .background(Theme.background)
+        }
+        .listStyle(SidebarListStyle())
     }
 }

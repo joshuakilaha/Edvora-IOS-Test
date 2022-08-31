@@ -25,6 +25,7 @@
 		2056B20128BF8AB20016B1B8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2056B20028BF8AB20016B1B8 /* ContentView.swift */; };
 		2056B20328BF8AB90016B1B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2056B20228BF8AB90016B1B8 /* Assets.xcassets */; };
 		2056B20628BF8AB90016B1B8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2056B20528BF8AB90016B1B8 /* Preview Assets.xcassets */; };
+		20E2D73528BFD99000DA2220 /* ProductListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E2D73428BFD98F00DA2220 /* ProductListViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		2056B20028BF8AB20016B1B8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2056B20228BF8AB90016B1B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2056B20528BF8AB90016B1B8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		20E2D73428BFD98F00DA2220 /* ProductListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				2028034C28BFAA5A00ADC108 /* ProductsListView.swift */,
+				20E2D73428BFD98F00DA2220 /* ProductListViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20E2D73528BFD99000DA2220 /* ProductListViewCell.swift in Sources */,
 				2028034D28BFAA5A00ADC108 /* ProductsListView.swift in Sources */,
 				2028034F28BFAA7300ADC108 /* OrdersListView.swift in Sources */,
 				2028036428BFC83700ADC108 /* UserListViewCell.swift in Sources */,
