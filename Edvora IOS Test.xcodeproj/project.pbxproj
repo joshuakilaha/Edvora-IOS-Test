@@ -11,6 +11,9 @@
 		2028034B28BFAA4100ADC108 /* UsersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2028034A28BFAA4100ADC108 /* UsersListView.swift */; };
 		2028034D28BFAA5A00ADC108 /* ProductsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2028034C28BFAA5A00ADC108 /* ProductsListView.swift */; };
 		2028034F28BFAA7300ADC108 /* OrdersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2028034E28BFAA7300ADC108 /* OrdersListView.swift */; };
+		2028035228BFAC4500ADC108 /* Users.json in Resources */ = {isa = PBXBuildFile; fileRef = 2028035128BFAC4500ADC108 /* Users.json */; };
+		2028035428BFAC5700ADC108 /* Orders.json in Resources */ = {isa = PBXBuildFile; fileRef = 2028035328BFAC5700ADC108 /* Orders.json */; };
+		2028035628BFAC6700ADC108 /* Products.json in Resources */ = {isa = PBXBuildFile; fileRef = 2028035528BFAC6700ADC108 /* Products.json */; };
 		2056B1FF28BF8AB20016B1B8 /* Edvora_IOS_TestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2056B1FE28BF8AB20016B1B8 /* Edvora_IOS_TestApp.swift */; };
 		2056B20128BF8AB20016B1B8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2056B20028BF8AB20016B1B8 /* ContentView.swift */; };
 		2056B20328BF8AB90016B1B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2056B20228BF8AB90016B1B8 /* Assets.xcassets */; };
@@ -22,6 +25,9 @@
 		2028034A28BFAA4100ADC108 /* UsersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListView.swift; sourceTree = "<group>"; };
 		2028034C28BFAA5A00ADC108 /* ProductsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsListView.swift; sourceTree = "<group>"; };
 		2028034E28BFAA7300ADC108 /* OrdersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersListView.swift; sourceTree = "<group>"; };
+		2028035128BFAC4500ADC108 /* Users.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Users.json; sourceTree = "<group>"; };
+		2028035328BFAC5700ADC108 /* Orders.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Orders.json; sourceTree = "<group>"; };
+		2028035528BFAC6700ADC108 /* Products.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Products.json; sourceTree = "<group>"; };
 		2056B1FB28BF8AB20016B1B8 /* Edvora IOS Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Edvora IOS Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2056B1FE28BF8AB20016B1B8 /* Edvora_IOS_TestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Edvora_IOS_TestApp.swift; sourceTree = "<group>"; };
 		2056B20028BF8AB20016B1B8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -43,9 +49,21 @@
 		2028034728BFA8AC00ADC108 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2028035028BFAC0B00ADC108 /* LocalJSON */,
+				2056B21A28BF8B440016B1B8 /* API */,
 				2028034828BFA8C600ADC108 /* Symbols.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		2028035028BFAC0B00ADC108 /* LocalJSON */ = {
+			isa = PBXGroup;
+			children = (
+				2028035128BFAC4500ADC108 /* Users.json */,
+				2028035328BFAC5700ADC108 /* Orders.json */,
+				2028035528BFAC6700ADC108 /* Products.json */,
+			);
+			path = LocalJSON;
 			sourceTree = "<group>";
 		};
 		2056B1F228BF8AB20016B1B8 = {
@@ -187,7 +205,6 @@
 		2056B21928BF8B320016B1B8 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				2056B21A28BF8B440016B1B8 /* API */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -257,8 +274,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2028035228BFAC4500ADC108 /* Users.json in Resources */,
 				2056B20628BF8AB90016B1B8 /* Preview Assets.xcassets in Resources */,
+				2028035428BFAC5700ADC108 /* Orders.json in Resources */,
 				2056B20328BF8AB90016B1B8 /* Assets.xcassets in Resources */,
+				2028035628BFAC6700ADC108 /* Products.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
