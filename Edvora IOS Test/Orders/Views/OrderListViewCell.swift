@@ -10,17 +10,20 @@ import SwiftUI
 struct OrderListViewCell: View {
     let order: Order
     private let dateConveter = DateConverter()
+    @StateObject var vm = OrderViewModel()
+    @State private var userName = ""
+    @State private var productName = ""
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 20) {
             HStack {
-                Text("<Product Orderd Name>")
+                Text(productName)
                     .bold()
                     .multilineTextAlignment(.leading)
                 Spacer()
                 Text("\(order.quantity) items")
             }
             HStack {
-                Text("<User Name>")
+                Text(userName)
                     .bold()
                     .multilineTextAlignment(.leading)
                 Spacer()
@@ -31,6 +34,12 @@ struct OrderListViewCell: View {
         .padding()
         .frame(maxWidth: .infinity, alignment: .leading)
         .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 0))
+        .onAppear {
+            let userNames = vm.getUserName(order.userId)
+            userName = userNames
+            let productNames = vm.getProductName(order.productId)
+            productName = productNames
+        }
     }
 }
 

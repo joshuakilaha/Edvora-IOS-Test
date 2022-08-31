@@ -9,7 +9,7 @@ import SwiftUI
 
 struct OrdersListView: View {
     @State private var orders: [Order] = []
-
+    @StateObject var vm = OrderViewModel()
     var body: some View {
         NavigationView {
             orderList
@@ -23,6 +23,8 @@ struct OrdersListView: View {
             } catch {
                 print(error)
             }
+            let name = vm.getUserName(19)
+            print(name)
         }
     }
 }

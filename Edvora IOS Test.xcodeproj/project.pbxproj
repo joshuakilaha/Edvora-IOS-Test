@@ -29,6 +29,7 @@
 		20E2D73728BFE14A00DA2220 /* OrderListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E2D73628BFE14A00DA2220 /* OrderListViewCell.swift */; };
 		20E2D73A28BFE27400DA2220 /* DateConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E2D73928BFE27400DA2220 /* DateConverter.swift */; };
 		20E2D73F28BFE7FE00DA2220 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E2D73E28BFE7FE00DA2220 /* ImagePicker.swift */; };
+		20E2D74228BFEFB500DA2220 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E2D74128BFEFB500DA2220 /* OrderViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		20E2D73628BFE14A00DA2220 /* OrderListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewCell.swift; sourceTree = "<group>"; };
 		20E2D73928BFE27400DA2220 /* DateConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateConverter.swift; sourceTree = "<group>"; };
 		20E2D73E28BFE7FE00DA2220 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		20E2D74128BFEFB500DA2220 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				20E2D73828BFE24600DA2220 /* DateConverter */,
+				20E2D74128BFEFB500DA2220 /* OrderViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				20E2D73528BFD99000DA2220 /* ProductListViewCell.swift in Sources */,
 				2028034D28BFAA5A00ADC108 /* ProductsListView.swift in Sources */,
 				2028034F28BFAA7300ADC108 /* OrdersListView.swift in Sources */,
+				20E2D74228BFEFB500DA2220 /* OrderViewModel.swift in Sources */,
 				20E2D73F28BFE7FE00DA2220 /* ImagePicker.swift in Sources */,
 				2028036428BFC83700ADC108 /* UserListViewCell.swift in Sources */,
 				20E2D73A28BFE27400DA2220 /* DateConverter.swift in Sources */,
