@@ -8,8 +8,23 @@
 import SwiftUI
 
 struct OrdersListView: View {
+    @State private var orders: [Order] = []
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            ForEach(orders, id: \.orderDate) { order in
+                Text("\(order.orderId)")
+            }
+        }
+        .onAppear {
+            do {
+                let orderData = try FetchJSONFile.decode(file: FileName.OrdersJSONFile, type: [Order].self)
+                print("Order Data \(orderData)")
+                orders = orderData
+            } catch {
+                print(error)
+            }
+        }
     }
 }
 

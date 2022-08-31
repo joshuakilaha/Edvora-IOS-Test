@@ -18,6 +18,7 @@
 		2028035A28BFAD4F00ADC108 /* FetchJSONFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2028035928BFAD4F00ADC108 /* FetchJSONFile.swift */; };
 		2028035C28BFAE4F00ADC108 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2028035B28BFAE4F00ADC108 /* User.swift */; };
 		2028035E28BFC0E800ADC108 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2028035D28BFC0E800ADC108 /* Product.swift */; };
+		2028036028BFC1E700ADC108 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2028035F28BFC1E700ADC108 /* Order.swift */; };
 		2056B1FF28BF8AB20016B1B8 /* Edvora_IOS_TestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2056B1FE28BF8AB20016B1B8 /* Edvora_IOS_TestApp.swift */; };
 		2056B20128BF8AB20016B1B8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2056B20028BF8AB20016B1B8 /* ContentView.swift */; };
 		2056B20328BF8AB90016B1B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2056B20228BF8AB90016B1B8 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 		2028035928BFAD4F00ADC108 /* FetchJSONFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchJSONFile.swift; sourceTree = "<group>"; };
 		2028035B28BFAE4F00ADC108 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2028035D28BFC0E800ADC108 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		2028035F28BFC1E700ADC108 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		2056B1FB28BF8AB20016B1B8 /* Edvora IOS Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Edvora IOS Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2056B1FE28BF8AB20016B1B8 /* Edvora_IOS_TestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Edvora_IOS_TestApp.swift; sourceTree = "<group>"; };
 		2056B20028BF8AB20016B1B8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 		2056B21028BF8AEB0016B1B8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2028035F28BFC1E700ADC108 /* Order.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				2028034F28BFAA7300ADC108 /* OrdersListView.swift in Sources */,
 				2028035A28BFAD4F00ADC108 /* FetchJSONFile.swift in Sources */,
 				2028034928BFA8C600ADC108 /* Symbols.swift in Sources */,
+				2028036028BFC1E700ADC108 /* Order.swift in Sources */,
 				2028035828BFACDF00ADC108 /* FileName.swift in Sources */,
 				2028035C28BFAE4F00ADC108 /* User.swift in Sources */,
 				2056B20128BF8AB20016B1B8 /* ContentView.swift in Sources */,
