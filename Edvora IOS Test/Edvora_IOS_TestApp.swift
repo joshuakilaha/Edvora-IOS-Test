@@ -27,7 +27,11 @@ struct Edvora_IOS_TestApp: App {
                         Symbols.product
                         Text("Products")
                     }
-                
+                UsersListView()
+                    .tabItem {
+                        Symbols.user
+                        Text("Users")
+                    }
             }
         }
     }

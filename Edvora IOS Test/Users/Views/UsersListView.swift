@@ -8,8 +8,23 @@
 import SwiftUI
 
 struct UsersListView: View {
+    @State private var users: [User] = []
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            ForEach(users, id: \.userId) { user in
+                Text(user.name)
+            }
+        }
+        .onAppear {
+            do {
+                let userData = try FetchJSONFile.decode(file: FileName.UsersJSONFile, type: [User].self)
+                print("User Data \(userData)")
+                users = userData
+            } catch {
+                print(error)
+            }
+        }
     }
 }
 
