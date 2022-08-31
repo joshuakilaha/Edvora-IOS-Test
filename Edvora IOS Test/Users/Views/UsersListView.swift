@@ -11,10 +11,9 @@ struct UsersListView: View {
     @State private var users: [User] = []
 
     var body: some View {
-        List {
-            ForEach(users, id: \.userId) { user in
-                Text(user.name)
-            }
+        NavigationView {
+            userList
+            .navigationTitle("Users")
         }
         .onAppear {
             do {
@@ -31,5 +30,19 @@ struct UsersListView: View {
 struct UsersListView_Previews: PreviewProvider {
     static var previews: some View {
         UsersListView()
+    }
+}
+
+extension UsersListView {
+    // MARK: -List View
+    var userList: some View {
+        List {
+            ForEach(users, id: \.userId) { user in
+                UserListViewCell(user: user)
+            }
+            .listRowBackground(Color.clear)
+            .background(Theme.background)
+        }
+        .listStyle(SidebarListStyle())
     }
 }
