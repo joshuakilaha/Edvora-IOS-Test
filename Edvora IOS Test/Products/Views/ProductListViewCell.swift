@@ -10,27 +10,44 @@ import SwiftUI
 struct ProductListViewCell: View {
     let product: Product
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(product.name)
-                .bold()
-                .multilineTextAlignment(.leading)
+        VStack(alignment: .leading, spacing: 10) {
+            HStack {
+                Text("Product:")
+                    .bold()
+                    .foregroundColor(Theme.baseColor)
+                Spacer()
+                Text(product.name)
+                    .bold()
+                    .multilineTextAlignment(.leading)
+            }
             
             HStack {
-                Text("Stock")
+                Text("Stock:")
                     .bold()
+                    .foregroundColor(Theme.baseColor)
                 Spacer()
-                Text("\(product.stock) items")
+                Text("\(product.stock) Items")
+                    .font(.body).fontWeight(.light)
+                    .foregroundColor(.gray)
+                    .multilineTextAlignment(.leading)
             }
+            
             HStack {
-                Text("Price")
+                Text("Price:")
                     .bold()
+                    .foregroundColor(Theme.baseColor)
                 Spacer()
-                Text("$\(product.sellingPrice)")
+                Text("Ksh. \(product.sellingPrice)")
+                    .font(.body).fontWeight(.light)
+                    .foregroundColor(.gray)
+                    .multilineTextAlignment(.leading)
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .none,alignment: .leading)
         .padding()
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 0))
+        .shadow(color: Theme.baseColor.opacity(0.4), radius: 2, x: 0, y: 1)
+        .background(Theme.cellBackground)
+        .clipShape(RoundedRectangle(cornerRadius:15, style: .continuous))
     }
 }
 

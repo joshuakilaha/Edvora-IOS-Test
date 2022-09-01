@@ -29,6 +29,9 @@
 		20BAD05028C0C4B1001B32DB /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BAD04F28C0C4B1001B32DB /* UserViewModel.swift */; };
 		20BAD05228C0C561001B32DB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BAD05128C0C561001B32DB /* Constants.swift */; };
 		20BAD05428C0CB52001B32DB /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BAD05328C0CB52001B32DB /* ProductViewModel.swift */; };
+		20BAD05728C0FEEA001B32DB /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 20BAD05628C0FEEA001B32DB /* SwiftUICharts */; };
+		20BAD05B28C113BA001B32DB /* ProductChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BAD05A28C113BA001B32DB /* ProductChart.swift */; };
+		20BAD05D28C141D7001B32DB /* OrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BAD05C28C141D6001B32DB /* OrderDetailView.swift */; };
 		20E2D73528BFD99000DA2220 /* ProductListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E2D73428BFD98F00DA2220 /* ProductListViewCell.swift */; };
 		20E2D73728BFE14A00DA2220 /* OrderListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E2D73628BFE14A00DA2220 /* OrderListViewCell.swift */; };
 		20E2D73A28BFE27400DA2220 /* DateConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E2D73928BFE27400DA2220 /* DateConverter.swift */; };
@@ -60,6 +63,8 @@
 		20BAD04F28C0C4B1001B32DB /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		20BAD05128C0C561001B32DB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		20BAD05328C0CB52001B32DB /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
+		20BAD05A28C113BA001B32DB /* ProductChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductChart.swift; sourceTree = "<group>"; };
+		20BAD05C28C141D6001B32DB /* OrderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailView.swift; sourceTree = "<group>"; };
 		20E2D73428BFD98F00DA2220 /* ProductListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewCell.swift; sourceTree = "<group>"; };
 		20E2D73628BFE14A00DA2220 /* OrderListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewCell.swift; sourceTree = "<group>"; };
 		20E2D73928BFE27400DA2220 /* DateConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateConverter.swift; sourceTree = "<group>"; };
@@ -72,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20BAD05728C0FEEA001B32DB /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +161,7 @@
 			children = (
 				2028034E28BFAA7300ADC108 /* OrdersListView.swift */,
 				20E2D73628BFE14A00DA2220 /* OrderListViewCell.swift */,
+				20BAD05C28C141D6001B32DB /* OrderDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -284,6 +291,7 @@
 			children = (
 				20E2D74028BFEE9500DA2220 /* ViewModel */,
 				2056B20028BF8AB20016B1B8 /* HomeView.swift */,
+				20BAD05A28C113BA001B32DB /* ProductChart.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -320,6 +328,9 @@
 			dependencies = (
 			);
 			name = "Edvora IOS Test";
+			packageProductDependencies = (
+				20BAD05628C0FEEA001B32DB /* SwiftUICharts */,
+			);
 			productName = "Edvora IOS Test";
 			productReference = 2056B1FB28BF8AB20016B1B8 /* Edvora IOS Test.app */;
 			productType = "com.apple.product-type.application";
@@ -348,6 +359,9 @@
 				Base,
 			);
 			mainGroup = 2056B1F228BF8AB20016B1B8;
+			packageReferences = (
+				20BAD05528C0FEEA001B32DB /* XCRemoteSwiftPackageReference "SwiftUICharts" */,
+			);
 			productRefGroup = 2056B1FC28BF8AB20016B1B8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -379,6 +393,7 @@
 			files = (
 				20BAD05228C0C561001B32DB /* Constants.swift in Sources */,
 				20E2D73528BFD99000DA2220 /* ProductListViewCell.swift in Sources */,
+				20BAD05D28C141D7001B32DB /* OrderDetailView.swift in Sources */,
 				2028034D28BFAA5A00ADC108 /* ProductsListView.swift in Sources */,
 				20BAD04E28C0C244001B32DB /* NetworkManager.swift in Sources */,
 				2028034F28BFAA7300ADC108 /* OrdersListView.swift in Sources */,
@@ -398,6 +413,7 @@
 				2028036228BFC6C900ADC108 /* Theme.swift in Sources */,
 				2056B1FF28BF8AB20016B1B8 /* Edvora_IOS_TestApp.swift in Sources */,
 				20BAD05028C0C4B1001B32DB /* UserViewModel.swift in Sources */,
+				20BAD05B28C113BA001B32DB /* ProductChart.swift in Sources */,
 				2028034B28BFAA4100ADC108 /* UsersListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -599,6 +615,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		20BAD05528C0FEEA001B32DB /* XCRemoteSwiftPackageReference "SwiftUICharts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/willdale/SwiftUICharts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		20BAD05628C0FEEA001B32DB /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 20BAD05528C0FEEA001B32DB /* XCRemoteSwiftPackageReference "SwiftUICharts" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2056B1F328BF8AB20016B1B8 /* Project object */;
 }

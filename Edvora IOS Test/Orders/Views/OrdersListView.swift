@@ -42,18 +42,22 @@ extension OrdersListView {
     var orderList: some View {
         List {
             ForEach(orderVM.orderSerach, id: \.orderDate) { order in
-               OrderListViewCell(order: order)
+                NavigationLink {
+                    OrderDetailView(order: order)
+                } label: {
+                    OrderListViewCell(order: order)
+                }
             }
             .listRowBackground(Color.clear)
             .background(Theme.background)
         }
-        .searchable(text: $orderVM.searchOrder, prompt: "Search Order by Date")
         .refreshable {
             Task {
                 await orderVM.getOrders()
             }
         }
         .listStyle(SidebarListStyle())
+        .searchable(text: $orderVM.searchOrder, prompt: "Search Order")
     }
     
     var totalItems: some View {

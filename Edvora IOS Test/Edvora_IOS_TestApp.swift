@@ -33,6 +33,7 @@ struct Edvora_IOS_TestApp: App {
                         Text("Users")
                     }
             }
+            .accentColor(Theme.baseColor)
         }
     }
 }

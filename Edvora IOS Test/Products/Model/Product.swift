@@ -10,6 +10,6 @@ import Foundation
 // MARK: - Product
 struct Product: Codable {
     let productId: Int
-    let name: String
+    var name: String
     let stock, sellingPrice: Int
 }

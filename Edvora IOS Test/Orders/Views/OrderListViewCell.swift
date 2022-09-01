@@ -14,37 +14,49 @@ struct OrderListViewCell: View {
     @State private var userName = ""
     @State private var productName = ""
     var body: some View {
-        VStack(alignment: .leading, spacing: 20) {
+        VStack(alignment: .leading, spacing: 10) {
+            
             HStack {
-                ZStack {
-                    if orderVM.isLoading {
-                        ProgressView()
-                    } else {
-                        Text(productName)
-                            .bold()
-                            .multilineTextAlignment(.leading)
-                    }
-                }
+                Text("Product Ordered:")
+                    .bold()
+                    .foregroundColor(Theme.baseColor)
                 Spacer()
-                Text("\(order.quantity) items")
-            }
-            HStack {
-                Text(userName)
+                Text(productName)
                     .bold()
                     .multilineTextAlignment(.leading)
+                    .onAppear {
+                        Task {
+                            productName = await orderVM.getProductName(order.productId)
+                        }
+                    }
+            }
+            HStack {
+                Text("Quantity:")
+                    .bold()
+                    .foregroundColor(Theme.baseColor)
+                Spacer()
+                Text("\(order.quantity)")
+                    .font(.body).fontWeight(.light)
+                    .foregroundColor(.gray)
+                    .multilineTextAlignment(.leading)
+            }
+            
+            HStack {
+                Text("Date:")
+                    .bold()
+                    .foregroundColor(Theme.baseColor)
                 Spacer()
                 Text(dateConveter.dateOrdered(order.orderDate))
-                    .multilineTextAlignment(.trailing)
+                    .font(.body).fontWeight(.light)
+                    .foregroundColor(.gray)
+                    .multilineTextAlignment(.leading)
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .none,alignment: .leading)
         .padding()
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 0))
-        .task {
-            //await orderVM.getOrders()
-            userName = await orderVM.getUserName(order.userId)
-            productName = await orderVM.getProductName(order.productId)
-        }
+        .shadow(color: Theme.baseColor.opacity(0.4), radius: 2, x: 0, y: 1)
+        .background(Theme.cellBackground)
+        .clipShape(RoundedRectangle(cornerRadius:15, style: .continuous))
     }
 }
 

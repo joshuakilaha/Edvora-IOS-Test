@@ -47,13 +47,12 @@ class OrderViewModel: ObservableObject {
             }
         }
     }
-    
         
     func getUserName(_ orderId: Int) async -> String {
         isLoading = true
         do {
-//            let usersDecoded = try await NetworkManager.shared.fetchRequest(API.baseURL + API.users, T: [User].self)
-            let usersDecoded = try FetchJSONFile.decode(file: FileName.UsersJSONFile, type: [User].self)
+            //let usersDecoded = try FetchJSONFile.decode(file: FileName.UsersJSONFile, type: [User].self)
+           let usersDecoded = try await NetworkManager.shared.fetchRequest(API.baseURL + API.users, T: [User].self)
             DispatchQueue.main.async {
                 defer { self.isLoading = false }
                 self.users = usersDecoded
@@ -75,8 +74,8 @@ class OrderViewModel: ObservableObject {
     func getProductName(_ productId: Int) async -> String {
         isLoading = true
         do {
-            //let productsDecoded = try await NetworkManager.shared.fetchRequest(API.baseURL + API.products, T: [Product].self)
-            let productsDecoded = try FetchJSONFile.decode(file: FileName.ProductsJSONFile, type: [Product].self)
+            //let productsDecoded = try FetchJSONFile.decode(file: FileName.ProductsJSONFile, type: [Product].self)
+       let productsDecoded = try await NetworkManager.shared.fetchRequest(API.baseURL + API.products, T: [Product].self)
             DispatchQueue.main.async {
                 defer { self.isLoading = false }
                 self.products = productsDecoded
@@ -85,7 +84,6 @@ class OrderViewModel: ObservableObject {
                 if productId == product.productId {
                     //print("user name Is: \(product.name)")
                     return product.name
-                   
                 }
             }
         } catch {
@@ -93,167 +91,4 @@ class OrderViewModel: ObservableObject {
         }
         return ""
     }
-    
-    
-    func TotalQuantityPerMonth() {
-        do {
-            let orderData = try FetchJSONFile.decode(file: FileName.OrdersJSONFile, type: [Order].self)
-            self.orders = orderData
-            
-        } catch {
-            print(error)
-        }
-    }
 }
-
-extension OrderViewModel {
-    enum OrderMonth: String {
-        case Jan
-        case Feb
-        case Mar
-        case Apr
-        case May
-        case Jun
-        case Jul
-        case Aug
-        case Sep
-        case Oct
-        case Nov
-        case Dec
-    }
-}
-
-/*
-extension OrderViewModel.OrderMonth {
-    var monthQuantity: String? {
-        switch self {
-
-        case .Jan:
-            return "January"
-        case .Feb:
-            return "February"
-        case .Mar:
-            return "March"
-        case .Apr:
-            return "April"
-        case .May:
-            return "May"
-        case .Jun:
-            return "June"
-        case .Jul:
-            return "July"
-        case .Aug:
-            return "August"
-        case .Sep:
-            return "September"
-        case .Oct:
-            return "October"
-        case .Nov:
-            return "November"
-        case .Dec:
-            return "December"
-        }
-    }
-}
- */
-
-/*
- private extension NetworkManager {
-     func buildRequest(from url: URL, methodType: MethodType) -> URLRequest {
-         var request = URLRequest(url: url)
-         
-         switch methodType {
-         case .GET:
-             request.httpMethod = "GET"
-         case .POST(let data):
-             request.httpMethod = "POST"
-             request.httpBody = data
-         }
-         return request
-     }
- }
- */
-
-private extension OrderViewModel {
-
-    func monthQunatity(orderMonth: OrderMonth) -> OrderMonth {
-        
-        switch orderMonth {
-        case .Jan:
-            return .Jan
-        case .Feb:
-            return .Feb
-        case .Mar:
-            return .Mar
-        case .Apr:
-            return .Apr
-        case .May:
-            return .May
-        case .Jun:
-            return .Jun
-        case .Jul:
-            return .Jul
-        case .Aug:
-            return .Aug
-        case .Sep:
-            return .Sep
-        case .Oct:
-            return .Oct
-        case .Nov:
-            return .Nov
-        case .Dec:
-            return .Dec
-        }
-    }
-}
-
-
-
-extension OrderViewModel {
-    func quntityPerMonth(month: String, quantity: Int) {
-        
-        //var value = 0
-        if month == "Jan" {
-            for value in month {
-                print("Total Values = \(value)")
-            }
-        }
-    }
-}
-
-
-/*
- 
-
- private extension OrderViewModel.orderMonth {
-     func monthQunatity(month: String) -> String {
-         switch self {
-
-         case .January:
-             return "January"
-         case .February:
-             return "February"
-         case .March:
-             return "March"
-         case .April:
-             return "April"
-         case .May:
-             return "May"
-         case .June:
-             return "June"
-         case .July:
-             return "July"
-         case .August:
-             return "August"
-         case .September:
-             return "September"
-         case .October:
-             return "October"
-         case .November:
-             return "November"
-         case .December:
-             return "December"
-         }
-     }
- }
- */

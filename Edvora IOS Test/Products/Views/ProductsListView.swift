@@ -31,6 +31,11 @@ struct ProductsListView: View {
                 }
             }
         }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                totalItems
+            }
+        }
     }
 }
 
@@ -56,5 +61,10 @@ extension ProductsListView {
         }
         .listStyle(SidebarListStyle())
         .searchable(text: $productVM.productSearch, prompt: "Search product")
+    }
+    var totalItems: some View {
+        Text("\(productVM.totalProducts) Items")
+            .bold()
+            .opacity(productVM.isLoading ? 0 : 1)
     }
 }

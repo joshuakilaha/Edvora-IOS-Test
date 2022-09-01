@@ -12,6 +12,7 @@ final class UserViewModel: ObservableObject {
     @Published private(set) var error: NetworkManager.NetworkError?
     @Published var hasError = false
     @Published var isLoading = false
+    @Published var userSearch = ""
     
     func getUsers() async {
      isLoading = true
@@ -27,6 +28,15 @@ final class UserViewModel: ObservableObject {
                 self.error = networkError
             } else {
                 self.error = .customError(error: error)
+            }
+        }
+    }
+    var searchUser: [User] {
+        if userSearch.isEmpty {
+            return users
+        } else {
+            return users.filter {
+                $0.name.localizedCaseInsensitiveContains(userSearch)
             }
         }
     }

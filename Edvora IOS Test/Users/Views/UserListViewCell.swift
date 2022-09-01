@@ -13,11 +13,14 @@ struct UserListViewCell: View {
         VStack(alignment: .leading, spacing: 5) {
             Text(user.name)
                 .bold()
-                .font(.title2)
+                .font(.body)
+                .foregroundColor(Theme.baseColor)
         }
+        .frame(maxWidth: .infinity, maxHeight: .none,alignment: .leading)
         .padding()
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 0))
+        .shadow(color: Theme.baseColor.opacity(0.4), radius: 2, x: 0, y: 1)
+        .background(Theme.cellBackground)
+        .clipShape(RoundedRectangle(cornerRadius:15, style: .continuous))
     }
 }
 

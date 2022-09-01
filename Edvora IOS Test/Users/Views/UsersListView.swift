@@ -44,12 +44,18 @@ extension UsersListView {
     // MARK: -List View
     var userList: some View {
         List {
-            ForEach(userVM.users, id: \.userId) { user in
+            ForEach(userVM.searchUser, id: \.userId) { user in
                 UserListViewCell(user: user)
             }
             .listRowBackground(Color.clear)
             .background(Theme.background)
         }
+        .refreshable {
+            Task {
+                await userVM.getUsers()
+            }
+        }
         .listStyle(SidebarListStyle())
+        .searchable(text: $userVM.userSearch, prompt: "Search User")
     }
 }

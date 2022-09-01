@@ -13,6 +13,7 @@ final class ProductViewModel: ObservableObject {
     @Published var hasError = false
     @Published var isLoading = false
     @Published var productSearch = ""
+    @Published var totalProducts: Int = 0
     func getProducts() async {
      isLoading = true
         do {
@@ -20,6 +21,7 @@ final class ProductViewModel: ObservableObject {
             DispatchQueue.main.async {
                 defer { self.isLoading = false }
                 self.products = productsDecoded
+                self.totalProducts = productsDecoded.count
             }
         } catch {
             DispatchQueue.main.async {
