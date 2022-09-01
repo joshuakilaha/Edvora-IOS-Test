@@ -15,4 +15,11 @@ class DateConverter {
         dateFormatter.dateFormat = "d MMM yyyy, h:mm a"
         return dateFormatter.string(from: timeStamp)
     }
+    
+    func dateOrderedByMonth(_ date: String) -> String {
+        let timeStamp = Date(timeIntervalSince1970: TimeInterval(date)!)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM"
+        return dateFormatter.string(from: timeStamp)
+    }
 }
