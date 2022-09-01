@@ -8,23 +8,20 @@
 import SwiftUI
 
 struct OrdersListView: View {
-    @State private var orders: [Order] = []
-    @StateObject var vm = OrderViewModel()
+    @StateObject var orderVM = OrderViewModel()
     var body: some View {
         NavigationView {
-            orderList
-                .navigationTitle("Orders")
-        }
-        .onAppear {
-            do {
-                let orderData = try FetchJSONFile.decode(file: FileName.OrdersJSONFile, type: [Order].self)
-                print("Order Data \(orderData)")
-                orders = orderData
-            } catch {
-                print(error)
+            ZStack {
+                if orderVM.isLoading {
+                    ProgressView()
+                } else {
+                    orderList
+                }
             }
-            let name = vm.getUserName(19)
-            print(name)
+            .navigationTitle("Orders")
+        }
+        .task {
+            await orderVM.getOrders()
         }
     }
 }
@@ -38,7 +35,7 @@ struct OrdersListView_Previews: PreviewProvider {
 extension OrdersListView {
     var orderList: some View {
         List {
-            ForEach(orders, id: \.orderDate) { order in
+            ForEach(orderVM.orders, id: \.orderDate) { order in
                OrderListViewCell(order: order)
             }
             .listRowBackground(Color.clear)

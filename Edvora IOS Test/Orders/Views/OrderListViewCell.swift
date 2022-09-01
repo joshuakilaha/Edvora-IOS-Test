@@ -10,7 +10,7 @@ import SwiftUI
 struct OrderListViewCell: View {
     let order: Order
     private let dateConveter = DateConverter()
-    @StateObject var vm = OrderViewModel()
+    @StateObject var orderVM = OrderViewModel()
     @State private var userName = ""
     @State private var productName = ""
     var body: some View {
@@ -34,11 +34,10 @@ struct OrderListViewCell: View {
         .padding()
         .frame(maxWidth: .infinity, alignment: .leading)
         .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 0))
-        .onAppear {
-            let userNames = vm.getUserName(order.userId)
-            userName = userNames
-            let productNames = vm.getProductName(order.productId)
-            productName = productNames
+        .task {
+            await orderVM.getOrders()
+            userName = await orderVM.getUserName(order.userId)
+            productName = await orderVM.getProductName(order.productId)
         }
     }
 }
