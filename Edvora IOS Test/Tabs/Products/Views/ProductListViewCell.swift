@@ -52,8 +52,9 @@ struct ProductListViewCell: View {
 }
 
 struct ProductListViewCell_Previews: PreviewProvider {
+    /// Returns first element from JSON local File
     static var previewProduct: Product {
-        let product = try! FetchJSONFile.decode(file: FileName.ProductsJSONFile, type: [Product].self)
+        let product = try! FetchJSONFile.decodeLocalFile(file: FileName.ProductsJSONFile, type: [Product].self)
         return product[0]
     }
     static var previews: some View {

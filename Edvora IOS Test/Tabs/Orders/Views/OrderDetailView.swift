@@ -97,7 +97,7 @@ struct OrderDetailView: View {
 
 struct OrderDetailView_Previews: PreviewProvider {
     static var previewOrder: Order {
-        let order = try! FetchJSONFile.decode(file: FileName.OrdersJSONFile, type: [Order].self)
+        let order = try! FetchJSONFile.decodeLocalFile(file: FileName.OrdersJSONFile, type: [Order].self)
         return order[0]
     }
     static var previews: some View {

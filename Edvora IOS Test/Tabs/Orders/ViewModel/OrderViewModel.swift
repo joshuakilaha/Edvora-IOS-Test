@@ -18,6 +18,7 @@ class OrderViewModel: ObservableObject {
     @Published var searchOrder = ""
     @Published var items: Int = 0
     
+    /// Fetchs decoded Orders Data From API in NetworkManager Singletone
     func getOrders() async {
         isLoading = true
            do {
@@ -38,6 +39,7 @@ class OrderViewModel: ObservableObject {
                }
            }
     }
+    /// Search Product by Name
     var orderSerach: [Order] {
         if searchOrder.isEmpty {
             return orders
@@ -47,11 +49,11 @@ class OrderViewModel: ObservableObject {
             }
         }
     }
-        
+    // MARK: -GET User NAME from ID
     func getUserName(_ orderId: Int) async -> String {
         isLoading = true
         do {
-            //let usersDecoded = try FetchJSONFile.decode(file: FileName.UsersJSONFile, type: [User].self)
+            //let usersDecoded = try FetchJSONFile.decodeLocalFile(file: FileName.UsersJSONFile, type: [User].self)
            let usersDecoded = try await NetworkManager.shared.fetchRequest(API.baseURL + API.users, T: [User].self)
             DispatchQueue.main.async {
                 defer { self.isLoading = false }
@@ -71,10 +73,11 @@ class OrderViewModel: ObservableObject {
         return ""
     }
     
+    // MARK: -GET Product NAME from ID
     func getProductName(_ productId: Int) async -> String {
         isLoading = true
         do {
-            //let productsDecoded = try FetchJSONFile.decode(file: FileName.ProductsJSONFile, type: [Product].self)
+            //let productsDecoded = try FetchJSONFile.decodeLocalFile(file: FileName.ProductsJSONFile, type: [Product].self)
        let productsDecoded = try await NetworkManager.shared.fetchRequest(API.baseURL + API.products, T: [Product].self)
             DispatchQueue.main.async {
                 defer { self.isLoading = false }

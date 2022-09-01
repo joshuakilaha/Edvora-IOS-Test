@@ -12,8 +12,10 @@ struct ProductsListView: View {
     var body: some View {
         NavigationView {
             ZStack {
+                // if loading present progress View
                 if productVM.isLoading {
                     ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle(tint: Theme.baseColor))
                 } else {
                     productList
                 }

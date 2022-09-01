@@ -30,6 +30,13 @@ struct HomeView: View {
         .task {
             await productVM.getProducts()
         }
+        .alert(isPresented: $productVM.hasError, error: productVM.error) {
+            Button("Retry") {
+                Task {
+                    await productVM.getProducts()
+                }
+            }
+        }
     }
 }
 

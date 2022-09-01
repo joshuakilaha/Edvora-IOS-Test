@@ -14,6 +14,7 @@ struct OrdersListView: View {
             ZStack {
                 if orderVM.isLoading {
                     ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle(tint: Theme.baseColor))
                 } else {
                     orderList
                 }

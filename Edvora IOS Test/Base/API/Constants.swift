@@ -7,10 +7,10 @@
 
 import Foundation
 
+// MARK: API URL's
 enum API {
     static let baseURL = "https://assessment.api.vweb.app"
     static let orders = "/orders"
     static let products = "/products"
     static let users = "/users"
-
 }

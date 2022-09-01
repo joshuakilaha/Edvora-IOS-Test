@@ -30,7 +30,6 @@
 		20BAD05228C0C561001B32DB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BAD05128C0C561001B32DB /* Constants.swift */; };
 		20BAD05428C0CB52001B32DB /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BAD05328C0CB52001B32DB /* ProductViewModel.swift */; };
 		20BAD05728C0FEEA001B32DB /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 20BAD05628C0FEEA001B32DB /* SwiftUICharts */; };
-		20BAD05B28C113BA001B32DB /* ProductChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BAD05A28C113BA001B32DB /* ProductChart.swift */; };
 		20BAD05D28C141D7001B32DB /* OrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BAD05C28C141D6001B32DB /* OrderDetailView.swift */; };
 		20BAD06128C15DFF001B32DB /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BAD06028C15DFF001B32DB /* LaunchScreenView.swift */; };
 		20BAD06328C16097001B32DB /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BAD06228C16097001B32DB /* TabsView.swift */; };
@@ -65,7 +64,6 @@
 		20BAD04F28C0C4B1001B32DB /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		20BAD05128C0C561001B32DB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		20BAD05328C0CB52001B32DB /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
-		20BAD05A28C113BA001B32DB /* ProductChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductChart.swift; sourceTree = "<group>"; };
 		20BAD05C28C141D6001B32DB /* OrderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailView.swift; sourceTree = "<group>"; };
 		20BAD06028C15DFF001B32DB /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		20BAD06228C16097001B32DB /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
@@ -313,7 +311,6 @@
 			children = (
 				20E2D74028BFEE9500DA2220 /* ViewModel */,
 				2056B20028BF8AB20016B1B8 /* HomeView.swift */,
-				20BAD05A28C113BA001B32DB /* ProductChart.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -437,7 +434,6 @@
 				2028036228BFC6C900ADC108 /* Theme.swift in Sources */,
 				2056B1FF28BF8AB20016B1B8 /* Edvora_IOS_TestApp.swift in Sources */,
 				20BAD05028C0C4B1001B32DB /* UserViewModel.swift in Sources */,
-				20BAD05B28C113BA001B32DB /* ProductChart.swift in Sources */,
 				2028034B28BFAA4100ADC108 /* UsersListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,8 +12,10 @@ struct UsersListView: View {
     var body: some View {
         NavigationView {
             ZStack {
+                // if loading present progress View
                 if userVM.isLoading {
                     ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle(tint: Theme.baseColor))
                 } else {
                     userList
                 }

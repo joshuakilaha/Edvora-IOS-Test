@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// MARK: Icon Symbols
 enum Symbols {
     static let home = Image(systemName: "house")
     static let orders = Image(systemName: "cart")

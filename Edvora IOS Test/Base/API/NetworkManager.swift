@@ -8,10 +8,15 @@
 import Foundation
 
 final class NetworkManager {
-    static let shared = NetworkManager()
+    static let shared = NetworkManager() //limits to one instance
     
     private init() {}
     
+    /// Singleton Func --  Fetchs data from API and decodes from the model file passed
+    /// - Parameters:
+    ///   - url: API url
+    ///   - T: Model : User
+    /// - Returns: Decoded Model  i.e   [User]
     func fetchRequest<T: Codable>(_ url: String, T: T.Type) async throws -> T {
         
         guard let url = URL(string: url) else {
@@ -36,7 +41,6 @@ final class NetworkManager {
     }
 }
 
-
 extension NetworkManager {
     enum NetworkError: LocalizedError {
         case invalidURL
@@ -47,11 +51,11 @@ extension NetworkManager {
     }
 }
 
+// MARK: Network Error Descriprions
 extension NetworkManager.NetworkError {
     var errorDescription: String? {
         
         switch self {
-            
         case .invalidURL:
             return "Invalid URL"
         case .customError(error: let error):

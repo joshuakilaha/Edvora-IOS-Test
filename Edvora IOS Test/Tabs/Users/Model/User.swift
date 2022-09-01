@@ -8,7 +8,6 @@
 import Foundation
 
 // MARK: - User
-
 struct User: Codable {
     let userId: Int
     let name: String

@@ -24,11 +24,10 @@ struct UserListViewCell: View {
     }
 }
 
-
 struct UserListViewCell_Previews: PreviewProvider {
+    /// Returns first element from JSON local File
     static var previewUser: User {
-        let users = try! FetchJSONFile.decode(file: FileName.UsersJSONFile, type: [User].self)
-        
+        let users = try! FetchJSONFile.decodeLocalFile(file: FileName.UsersJSONFile, type: [User].self)
         return users[0]
     }
     static var previews: some View {

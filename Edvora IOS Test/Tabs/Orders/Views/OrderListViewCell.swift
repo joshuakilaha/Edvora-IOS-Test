@@ -15,7 +15,6 @@ struct OrderListViewCell: View {
     @State private var productName = ""
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            
             HStack {
                 Text("Product Ordered:")
                     .bold()
@@ -35,7 +34,7 @@ struct OrderListViewCell: View {
                     .bold()
                     .foregroundColor(Theme.baseColor)
                 Spacer()
-                Text("\(order.quantity)")
+                Text("\(order.quantity) Items")
                     .font(.body).fontWeight(.light)
                     .foregroundColor(.gray)
                     .multilineTextAlignment(.leading)
@@ -61,8 +60,9 @@ struct OrderListViewCell: View {
 }
 
 struct OrderListViewCell_Previews: PreviewProvider {
+    /// Returns first element from JSON local File
     static var previewOrder: Order {
-        let order = try! FetchJSONFile.decode(file: FileName.OrdersJSONFile, type: [Order].self)
+        let order = try! FetchJSONFile.decodeLocalFile(file: FileName.OrdersJSONFile, type: [Order].self)
         return order[0]
     }
     static var previews: some View {

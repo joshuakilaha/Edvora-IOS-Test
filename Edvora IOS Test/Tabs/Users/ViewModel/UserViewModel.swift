@@ -14,6 +14,7 @@ final class UserViewModel: ObservableObject {
     @Published var isLoading = false
     @Published var userSearch = ""
     
+    /// Fetchs decoded User Data From API in NetworkManager Singletone
     func getUsers() async {
      isLoading = true
         do {
@@ -31,6 +32,8 @@ final class UserViewModel: ObservableObject {
             }
         }
     }
+    
+    /// Search Users by Name
     var searchUser: [User] {
         if userSearch.isEmpty {
             return users

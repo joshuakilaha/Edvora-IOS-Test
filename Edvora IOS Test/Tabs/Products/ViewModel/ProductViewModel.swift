@@ -14,6 +14,8 @@ final class ProductViewModel: ObservableObject {
     @Published var isLoading = false
     @Published var productSearch = ""
     @Published var totalProducts: Int = 0
+    
+    /// Fetchs decoded Products Data From API in NetworkManager Singletone
     func getProducts() async {
      isLoading = true
         do {
@@ -34,6 +36,7 @@ final class ProductViewModel: ObservableObject {
             }
         }
     }
+    /// Search Product by Name
     var searchProduct: [Product] {
         if productSearch.isEmpty {
             return products.reversed()
