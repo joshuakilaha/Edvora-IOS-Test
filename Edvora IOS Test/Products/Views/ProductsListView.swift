@@ -8,19 +8,26 @@
 import SwiftUI
 
 struct ProductsListView: View {
-    @State private var products: [Product] = []
-
+    @StateObject private var productVM = ProductViewModel()
     var body: some View {
         NavigationView {
-            productList
-                .navigationTitle("Products")
-            .onAppear {
-                do {
-                    let productData = try FetchJSONFile.decode(file: FileName.ProductsJSONFile, type: [Product].self)
-                    print("Product Data \(productData)")
-                    products = productData
-                } catch {
-                    print(error)
+            ZStack {
+                if productVM.isLoading {
+                    ProgressView()
+                } else {
+                    productList
+                }
+            }
+            .navigationTitle("Products")
+            .task {
+                await productVM.getProducts()
+            }
+        }
+        .navigationViewStyle(.stack)
+        .alert(isPresented: $productVM.hasError, error: productVM.error) {
+            Button("Retry") {
+                Task {
+                    await productVM.getProducts()
                 }
             }
         }
@@ -36,7 +43,7 @@ extension ProductsListView {
     // MARK: -List View
     var productList: some View {
         List {
-            ForEach(products, id: \.productId) { product in
+            ForEach(productVM.products, id: \.productId) { product in
                 ProductListViewCell(product: product)
             }
             .listRowBackground(Color.clear)
