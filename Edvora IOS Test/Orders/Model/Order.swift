@@ -8,6 +8,6 @@
 import Foundation
 
 struct Order: Codable {
-    let orderId, productId, quantity, userId: Int
-    let orderDate: String
+    var orderId, productId, quantity, userId: Int
+    var orderDate: String
 }
