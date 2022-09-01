@@ -274,14 +274,22 @@
 		20BAD05E28C15919001B32DB /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
+				20BAD06428C1616D001B32DB /* LaunchScreen */,
 				20E2D73B28BFE59E00DA2220 /* Home */,
 				2056B20C28BF8AC60016B1B8 /* Orders */,
 				2056B21128BF8AF40016B1B8 /* Products */,
 				2056B21228BF8AFC0016B1B8 /* Users */,
-				20BAD06028C15DFF001B32DB /* LaunchScreenView.swift */,
 				20BAD06228C16097001B32DB /* TabsView.swift */,
 			);
 			path = Tabs;
+			sourceTree = "<group>";
+		};
+		20BAD06428C1616D001B32DB /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				20BAD06028C15DFF001B32DB /* LaunchScreenView.swift */,
+			);
+			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
 		20E2D73828BFE24600DA2220 /* DateConverter */ = {
