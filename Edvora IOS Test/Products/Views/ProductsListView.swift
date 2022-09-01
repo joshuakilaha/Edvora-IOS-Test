@@ -43,12 +43,18 @@ extension ProductsListView {
     // MARK: -List View
     var productList: some View {
         List {
-            ForEach(productVM.products, id: \.productId) { product in
+            ForEach(productVM.searchProduct, id: \.productId) { product in
                 ProductListViewCell(product: product)
             }
             .listRowBackground(Color.clear)
             .background(Theme.background)
         }
+        .refreshable {
+            Task {
+                await productVM.getProducts()
+            }
+        }
         .listStyle(SidebarListStyle())
+        .searchable(text: $productVM.productSearch, prompt: "Search product")
     }
 }

@@ -16,9 +16,15 @@ struct OrderListViewCell: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             HStack {
-                Text(productName)
-                    .bold()
-                    .multilineTextAlignment(.leading)
+                ZStack {
+                    if orderVM.isLoading {
+                        ProgressView()
+                    } else {
+                        Text(productName)
+                            .bold()
+                            .multilineTextAlignment(.leading)
+                    }
+                }
                 Spacer()
                 Text("\(order.quantity) items")
             }
@@ -35,7 +41,7 @@ struct OrderListViewCell: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 0))
         .task {
-            await orderVM.getOrders()
+            //await orderVM.getOrders()
             userName = await orderVM.getUserName(order.userId)
             productName = await orderVM.getProductName(order.productId)
         }

@@ -12,7 +12,7 @@ final class ProductViewModel: ObservableObject {
     @Published private(set) var error: NetworkManager.NetworkError?
     @Published var hasError = false
     @Published var isLoading = false
-    
+    @Published var productSearch = ""
     func getProducts() async {
      isLoading = true
         do {
@@ -22,11 +22,22 @@ final class ProductViewModel: ObservableObject {
                 self.products = productsDecoded
             }
         } catch {
-            hasError = true
-            if let networkError = error as? NetworkManager.NetworkError {
-                self.error = networkError
-            } else {
-                self.error = .customError(error: error)
+            DispatchQueue.main.async {
+                self.hasError = true
+                if let networkError = error as? NetworkManager.NetworkError {
+                    self.error = networkError
+                } else {
+                    self.error = .customError(error: error)
+                }
+            }
+        }
+    }
+    var searchProduct: [Product] {
+        if productSearch.isEmpty {
+            return products.reversed()
+        } else {
+            return products.filter {
+                $0.name.localizedCaseInsensitiveContains(productSearch)
             }
         }
     }

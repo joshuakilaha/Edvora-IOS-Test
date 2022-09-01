@@ -19,7 +19,13 @@ struct OrdersListView: View {
                 }
             }
             .navigationTitle("Orders")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    totalItems
+                }
+            }
         }
+        .navigationViewStyle(.stack)
         .task {
             await orderVM.getOrders()
         }
@@ -35,12 +41,24 @@ struct OrdersListView_Previews: PreviewProvider {
 extension OrdersListView {
     var orderList: some View {
         List {
-            ForEach(orderVM.orders, id: \.orderDate) { order in
+            ForEach(orderVM.orderSerach, id: \.orderDate) { order in
                OrderListViewCell(order: order)
             }
             .listRowBackground(Color.clear)
             .background(Theme.background)
         }
+        .searchable(text: $orderVM.searchOrder, prompt: "Search Order by Date")
+        .refreshable {
+            Task {
+                await orderVM.getOrders()
+            }
+        }
         .listStyle(SidebarListStyle())
+    }
+    
+    var totalItems: some View {
+        Text("\(orderVM.items) Items")
+            .bold()
+            .opacity(orderVM.isLoading ? 0 : 1)
     }
 }

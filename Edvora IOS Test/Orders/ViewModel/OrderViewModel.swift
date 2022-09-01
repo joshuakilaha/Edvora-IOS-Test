@@ -15,7 +15,8 @@ class OrderViewModel: ObservableObject {
     @Published private(set) var error: NetworkManager.NetworkError?
     @Published var hasError = false
     @Published var isLoading = false
-    
+    @Published var searchOrder = ""
+    @Published var items: Int = 0
     
     func getOrders() async {
         isLoading = true
@@ -24,23 +25,39 @@ class OrderViewModel: ObservableObject {
                DispatchQueue.main.async {
                    defer { self.isLoading = false }
                    self.orders = ordersDecoded
+                   self.items = self.orders.count
                }
            } catch {
-               hasError = true
-               if let networkError = error as? NetworkManager.NetworkError {
-                   self.error = networkError
-               } else {
-                   self.error = .customError(error: error)
+               DispatchQueue.main.async {
+                   self.hasError = true
+                   if let networkError = error as? NetworkManager.NetworkError {
+                       self.error = networkError
+                   } else {
+                       self.error = .customError(error: error)
+                   }
                }
            }
     }
+    var orderSerach: [Order] {
+        if searchOrder.isEmpty {
+            return orders
+        } else {
+            return orders.filter {
+                $0.orderDate.localizedCaseInsensitiveContains(searchOrder)
+            }
+        }
+    }
     
-    
+        
     func getUserName(_ orderId: Int) async -> String {
+        isLoading = true
         do {
-            let usersDecoded = try await NetworkManager.shared.fetchRequest(API.baseURL + API.users, T: [User].self)
+//            let usersDecoded = try await NetworkManager.shared.fetchRequest(API.baseURL + API.users, T: [User].self)
+            let usersDecoded = try FetchJSONFile.decode(file: FileName.UsersJSONFile, type: [User].self)
             DispatchQueue.main.async {
+                defer { self.isLoading = false }
                 self.users = usersDecoded
+                return
             }
            
             for user in self.users {
@@ -56,9 +73,12 @@ class OrderViewModel: ObservableObject {
     }
     
     func getProductName(_ productId: Int) async -> String {
+        isLoading = true
         do {
-            let productsDecoded = try await NetworkManager.shared.fetchRequest(API.baseURL + API.products, T: [Product].self)
+            //let productsDecoded = try await NetworkManager.shared.fetchRequest(API.baseURL + API.products, T: [Product].self)
+            let productsDecoded = try FetchJSONFile.decode(file: FileName.ProductsJSONFile, type: [Product].self)
             DispatchQueue.main.async {
+                defer { self.isLoading = false }
                 self.products = productsDecoded
             }
             for product in self.products {
