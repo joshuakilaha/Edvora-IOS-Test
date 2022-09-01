@@ -8,20 +8,27 @@
 import SwiftUI
 
 struct UsersListView: View {
-    @State private var users: [User] = []
-
+    @StateObject private var userVM = UserViewModel()
     var body: some View {
         NavigationView {
-            userList
-                .navigationTitle("Users")
+            ZStack {
+                if userVM.isLoading {
+                    ProgressView()
+                } else {
+                    userList
+                }
+            }
+            .navigationTitle("Users")
         }
-        .onAppear {
-            do {
-                let userData = try FetchJSONFile.decode(file: FileName.UsersJSONFile, type: [User].self)
-                print("User Data \(userData)")
-                users = userData
-            } catch {
-                print(error)
+        .navigationViewStyle(.stack)
+        .task {
+            await userVM.getUsers()
+        }
+        .alert(isPresented: $userVM.hasError, error: userVM.error) {
+            Button("Retry") {
+                Task {
+                    await userVM.getUsers()
+                }
             }
         }
     }
@@ -37,7 +44,7 @@ extension UsersListView {
     // MARK: -List View
     var userList: some View {
         List {
-            ForEach(users, id: \.userId) { user in
+            ForEach(userVM.users, id: \.userId) { user in
                 UserListViewCell(user: user)
             }
             .listRowBackground(Color.clear)

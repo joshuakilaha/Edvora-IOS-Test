@@ -25,6 +25,9 @@
 		2056B20128BF8AB20016B1B8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2056B20028BF8AB20016B1B8 /* HomeView.swift */; };
 		2056B20328BF8AB90016B1B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2056B20228BF8AB90016B1B8 /* Assets.xcassets */; };
 		2056B20628BF8AB90016B1B8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2056B20528BF8AB90016B1B8 /* Preview Assets.xcassets */; };
+		20BAD04E28C0C244001B32DB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BAD04D28C0C244001B32DB /* NetworkManager.swift */; };
+		20BAD05028C0C4B1001B32DB /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BAD04F28C0C4B1001B32DB /* UserViewModel.swift */; };
+		20BAD05228C0C561001B32DB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BAD05128C0C561001B32DB /* Constants.swift */; };
 		20E2D73528BFD99000DA2220 /* ProductListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E2D73428BFD98F00DA2220 /* ProductListViewCell.swift */; };
 		20E2D73728BFE14A00DA2220 /* OrderListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E2D73628BFE14A00DA2220 /* OrderListViewCell.swift */; };
 		20E2D73A28BFE27400DA2220 /* DateConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E2D73928BFE27400DA2220 /* DateConverter.swift */; };
@@ -52,6 +55,9 @@
 		2056B20028BF8AB20016B1B8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		2056B20228BF8AB90016B1B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2056B20528BF8AB90016B1B8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		20BAD04D28C0C244001B32DB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		20BAD04F28C0C4B1001B32DB /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		20BAD05128C0C561001B32DB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		20E2D73428BFD98F00DA2220 /* ProductListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewCell.swift; sourceTree = "<group>"; };
 		20E2D73628BFE14A00DA2220 /* OrderListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewCell.swift; sourceTree = "<group>"; };
 		20E2D73928BFE27400DA2220 /* DateConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateConverter.swift; sourceTree = "<group>"; };
@@ -74,7 +80,6 @@
 			isa = PBXGroup;
 			children = (
 				2028035028BFAC0B00ADC108 /* LocalJSON */,
-				2056B21A28BF8B440016B1B8 /* API */,
 				2028034828BFA8C600ADC108 /* Symbols.swift */,
 				2028036128BFC6C900ADC108 /* Theme.swift */,
 			);
@@ -201,6 +206,7 @@
 		2056B21428BF8B0D0016B1B8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				20BAD04F28C0C4B1001B32DB /* UserViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -240,6 +246,7 @@
 		2056B21928BF8B320016B1B8 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				2056B21A28BF8B440016B1B8 /* API */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -247,6 +254,8 @@
 		2056B21A28BF8B440016B1B8 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				20BAD04D28C0C244001B32DB /* NetworkManager.swift */,
+				20BAD05128C0C561001B32DB /* Constants.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -365,8 +374,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20BAD05228C0C561001B32DB /* Constants.swift in Sources */,
 				20E2D73528BFD99000DA2220 /* ProductListViewCell.swift in Sources */,
 				2028034D28BFAA5A00ADC108 /* ProductsListView.swift in Sources */,
+				20BAD04E28C0C244001B32DB /* NetworkManager.swift in Sources */,
 				2028034F28BFAA7300ADC108 /* OrdersListView.swift in Sources */,
 				20E2D74228BFEFB500DA2220 /* OrderViewModel.swift in Sources */,
 				20E2D73F28BFE7FE00DA2220 /* ImagePicker.swift in Sources */,
@@ -382,6 +393,7 @@
 				2028035E28BFC0E800ADC108 /* Product.swift in Sources */,
 				2028036228BFC6C900ADC108 /* Theme.swift in Sources */,
 				2056B1FF28BF8AB20016B1B8 /* Edvora_IOS_TestApp.swift in Sources */,
+				20BAD05028C0C4B1001B32DB /* UserViewModel.swift in Sources */,
 				2028034B28BFAA4100ADC108 /* UsersListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
