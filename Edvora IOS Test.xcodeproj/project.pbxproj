@@ -125,12 +125,9 @@
 		2056B1FD28BF8AB20016B1B8 /* Edvora IOS Test */ = {
 			isa = PBXGroup;
 			children = (
-				20E2D73B28BFE59E00DA2220 /* Home */,
+				20BAD05E28C15919001B32DB /* Tabs */,
 				2028034728BFA8AC00ADC108 /* Resources */,
 				2056B21928BF8B320016B1B8 /* Base */,
-				2056B21228BF8AFC0016B1B8 /* Users */,
-				2056B21128BF8AF40016B1B8 /* Products */,
-				2056B20C28BF8AC60016B1B8 /* Orders */,
 				2056B1FE28BF8AB20016B1B8 /* Edvora_IOS_TestApp.swift */,
 				2056B20228BF8AB90016B1B8 /* Assets.xcassets */,
 				2056B20428BF8AB90016B1B8 /* Preview Content */,
@@ -268,6 +265,17 @@
 				20BAD05128C0C561001B32DB /* Constants.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		20BAD05E28C15919001B32DB /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				20E2D73B28BFE59E00DA2220 /* Home */,
+				2056B20C28BF8AC60016B1B8 /* Orders */,
+				2056B21128BF8AF40016B1B8 /* Products */,
+				2056B21228BF8AFC0016B1B8 /* Users */,
+			);
+			path = Tabs;
 			sourceTree = "<group>";
 		};
 		20E2D73828BFE24600DA2220 /* DateConverter */ = {
