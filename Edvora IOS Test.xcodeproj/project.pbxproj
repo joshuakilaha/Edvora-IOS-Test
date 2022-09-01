@@ -32,6 +32,8 @@
 		20BAD05728C0FEEA001B32DB /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 20BAD05628C0FEEA001B32DB /* SwiftUICharts */; };
 		20BAD05B28C113BA001B32DB /* ProductChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BAD05A28C113BA001B32DB /* ProductChart.swift */; };
 		20BAD05D28C141D7001B32DB /* OrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BAD05C28C141D6001B32DB /* OrderDetailView.swift */; };
+		20BAD06128C15DFF001B32DB /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BAD06028C15DFF001B32DB /* LaunchScreenView.swift */; };
+		20BAD06328C16097001B32DB /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BAD06228C16097001B32DB /* TabsView.swift */; };
 		20E2D73528BFD99000DA2220 /* ProductListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E2D73428BFD98F00DA2220 /* ProductListViewCell.swift */; };
 		20E2D73728BFE14A00DA2220 /* OrderListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E2D73628BFE14A00DA2220 /* OrderListViewCell.swift */; };
 		20E2D73A28BFE27400DA2220 /* DateConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E2D73928BFE27400DA2220 /* DateConverter.swift */; };
@@ -65,6 +67,8 @@
 		20BAD05328C0CB52001B32DB /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		20BAD05A28C113BA001B32DB /* ProductChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductChart.swift; sourceTree = "<group>"; };
 		20BAD05C28C141D6001B32DB /* OrderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailView.swift; sourceTree = "<group>"; };
+		20BAD06028C15DFF001B32DB /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
+		20BAD06228C16097001B32DB /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
 		20E2D73428BFD98F00DA2220 /* ProductListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewCell.swift; sourceTree = "<group>"; };
 		20E2D73628BFE14A00DA2220 /* OrderListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewCell.swift; sourceTree = "<group>"; };
 		20E2D73928BFE27400DA2220 /* DateConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateConverter.swift; sourceTree = "<group>"; };
@@ -274,6 +278,8 @@
 				2056B20C28BF8AC60016B1B8 /* Orders */,
 				2056B21128BF8AF40016B1B8 /* Products */,
 				2056B21228BF8AFC0016B1B8 /* Users */,
+				20BAD06028C15DFF001B32DB /* LaunchScreenView.swift */,
+				20BAD06228C16097001B32DB /* TabsView.swift */,
 			);
 			path = Tabs;
 			sourceTree = "<group>";
@@ -404,6 +410,7 @@
 				20BAD05D28C141D7001B32DB /* OrderDetailView.swift in Sources */,
 				2028034D28BFAA5A00ADC108 /* ProductsListView.swift in Sources */,
 				20BAD04E28C0C244001B32DB /* NetworkManager.swift in Sources */,
+				20BAD06128C15DFF001B32DB /* LaunchScreenView.swift in Sources */,
 				2028034F28BFAA7300ADC108 /* OrdersListView.swift in Sources */,
 				20E2D74228BFEFB500DA2220 /* OrderViewModel.swift in Sources */,
 				20BAD05428C0CB52001B32DB /* ProductViewModel.swift in Sources */,
@@ -414,6 +421,7 @@
 				2028034928BFA8C600ADC108 /* Symbols.swift in Sources */,
 				2028036028BFC1E700ADC108 /* Order.swift in Sources */,
 				2028035828BFACDF00ADC108 /* FileName.swift in Sources */,
+				20BAD06328C16097001B32DB /* TabsView.swift in Sources */,
 				2028035C28BFAE4F00ADC108 /* User.swift in Sources */,
 				20E2D73728BFE14A00DA2220 /* OrderListViewCell.swift in Sources */,
 				2056B20128BF8AB20016B1B8 /* HomeView.swift in Sources */,
@@ -554,9 +562,9 @@
 				DEVELOPMENT_TEAM = 5Z3UL2PDB7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Edvora-IOS-Test-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -583,9 +591,9 @@
 				DEVELOPMENT_TEAM = 5Z3UL2PDB7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Edvora-IOS-Test-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
